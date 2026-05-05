@@ -2,11 +2,13 @@
 
 [![CI](https://github.com/blazQ/dialogot/actions/workflows/ci.yml/badge.svg)](https://github.com/blazQ/dialogot/actions/workflows/ci.yml)
 [![Godot v4.6](https://img.shields.io/badge/Godot-v4.6-blue?logo=godot-engine)](https://godotengine.org/)
-[![License: MIT](https://img.shields.io/github/license/blazQ/dialogot)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 Minimal dialogue system featuring Animal Crossing style animalese voicesfor Godot 4. Each character speaks in a distinct synthesised voice by playing phoneme sounds per letter, driven by a simple plain-text `.dialogue` script format.
 
 Inspired by [Equalo's animalese-generator](https://github.com/equalo-official/animalese-generator) and used [MattMarch's ACVoicebox](https://github.com/mattmarch/ACVoicebox) as the base reference. Letter sounds taken from the same repo.
+
+![Dialogot example](assets/example.gif)
 
 ---
 
