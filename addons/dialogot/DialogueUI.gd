@@ -2,13 +2,13 @@ extends BaseDialogueBox
 
 @export var default_voice: VoiceProfile
 
+var _voiced_chars: int = 0
+var _bbcode_strip_regex: RegEx
+
 @onready var voicebox: Dialogot = $Dialogot
 @onready var text_label: RichTextLabel = $Box/MarginContainer/VBox/TextLabel
 @onready var name_label: Label = $Box/MarginContainer/VBox/Header/NameLabel
 @onready var portrait: TextureRect = $Box/MarginContainer/VBox/Header/Portrait
-
-var _voiced_chars: int = 0
-var _bbcode_strip_regex: RegEx
 
 func _ready():
 	_bbcode_strip_regex = RegEx.new()

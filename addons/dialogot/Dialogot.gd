@@ -1,21 +1,23 @@
-extends AudioStreamPlayer
 class_name Dialogot
+extends AudioStreamPlayer
 
 signal characters_sounded(characters)
 signal finished_phrase()
 
-# Loaded at runtime so paths resolve correctly wherever the plugin is installed.
-var sounds: Dictionary = {}
-
 @export var voice: VoiceProfile
 
+# Loaded at runtime so paths resolve correctly wherever the plugin is installed.
+var sounds: Dictionary = {}
 var _remaining_sounds := []
 var _pitch_effect: AudioEffectPitchShift
 
 func _ready():
 	var dir: String = get_script().resource_path.get_base_dir() + "/Sounds/"
-	for s in ["a","b","c","d","e","f","g","h","i","j","k","l","m",
-			  "n","o","p","q","r","s","t","u","v","w","x","y","z","th","sh"]:
+	for s in [
+		"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+		"n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+		"th", "sh",
+	]:
 		sounds[s] = load(dir + s + ".wav")
 
 func _setup_bus():

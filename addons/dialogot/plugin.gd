@@ -17,4 +17,5 @@ func _ensure_voice_bus() -> void:
 	var idx := AudioServer.bus_count - 1
 	AudioServer.set_bus_name(idx, _BUS_NAME)
 	AudioServer.add_bus_effect(idx, AudioEffectPitchShift.new())
-	push_warning("[Dialogot] Added '%s' audio bus with PitchShift effect. Save your project to persist it." % _BUS_NAME)
+	push_warning("[Dialogot] Added '%s' audio bus with PitchShift effect. Save your project to persist it." \
+			% _BUS_NAME)
