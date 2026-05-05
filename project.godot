@@ -18,7 +18,6 @@ config/name="Dialogot"
 run/main_scene="uid://dawyf5cxb5n1g"
 config/features=PackedStringArray("4.6")
 
-
 [audio]
 
 buses/default_bus_layout="uid://b1neb7txsxoor"

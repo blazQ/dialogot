@@ -49,7 +49,8 @@ func _on_finished_phrase() -> void:
 	var line: DialogueLine = DialogueManager.current_line()
 	if line and line.auto_advance:
 		await get_tree().create_timer(line.auto_advance_delay).timeout
-		DialogueManager.advance()
+		if DialogueManager.current_line() == line:
+			DialogueManager.advance()
 
 func _input(event: InputEvent) -> void:
 	if not DialogueManager.is_playing():

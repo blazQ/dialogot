@@ -152,8 +152,8 @@ For a completely different layout, create a new scene whose root script extends 
 extends BaseDialogueBox
 
 func show_line(line: DialogueLine) -> void:
-    $MyLabel.text = line.text
-    # wire up your own Dialogot node, portrait, etc.
+	$MyLabel.text = line.text
+	# wire up your own Dialogot node, portrait, etc.
 ```
 
 Use your scene instead of `DialogueUI.tscn`. `BaseDialogueBox` already handles `on_dialogue_started` / `on_dialogue_finished` (show/hide), so you only need to implement `show_line`.
