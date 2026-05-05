@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Dialogot"
 run/main_scene="uid://dawyf5cxb5n1g"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.png"
+
 
 [audio]
 
