@@ -15,13 +15,40 @@ Inspired by [Equalo's animalese-generator](https://github.com/equalo-official/an
 ### As a plugin (recommended)
 
 1. Copy the `addons/dialogot/` folder into your game project's `addons/` folder.
-2. In Godot: **Project → Project Settings → Plugins**, enable **Dialogot**.  
+2. In Godot: **Project → Project Settings → Plugins**, enable **Dialogot**.
    This registers `DialogueManager` as an autoload singleton automatically.
 3. Add a `Voice` audio bus in **Project → Project Settings → Audio → Buses** and attach an `AudioEffectPitchShift` effect to it. The bus name must match the `audio_bus` field on your `VoiceProfile` resources (default: `"Voice"`).
 
 ### Standalone (running the example)
 
 Open the project directly in Godot. `DialogueManager` is already registered as an autoload in `project.godot` and the example scene is set as the main scene.
+
+---
+
+## Project layout
+
+`addons/dialogot/` is the plugin — treat it as read-only. Updating the plugin means replacing that folder entirely, so never put game content inside it.
+
+All game-specific files live in your own project tree, alongside your other assets:
+
+```text
+res://
+├── addons/dialogot/        ← plugin, do not modify
+├── dialogues/              ← your .dialogue scripts
+│   ├── act1/intro.dialogue
+│   └── act2/boss.dialogue
+├── characters/             ← CharacterProfile .tres files
+│   ├── goofy.tres
+│   └── donald.tres
+├── voices/                 ← VoiceProfile .tres files
+│   └── gruff_old_man.tres
+└── ui/dialogue/            ← custom dialogue box scenes
+    └── RPGBox.tscn         ← extends BaseDialogueBox
+```
+
+All plugin types (`VoiceProfile`, `CharacterProfile`, `DialogueParser`, `BaseDialogueBox`, `Dialogot`) are registered globally when the plugin is enabled, so your files can reference them from anywhere without imports.
+
+> **Note on sample VoiceProfiles:** `addons/dialogot/VoiceProfiles/` contains starter presets for reference. Copy any you want to use into your own `voices/` folder rather than referencing them by path directly — that way a plugin update can never change them under you.
 
 ---
 
