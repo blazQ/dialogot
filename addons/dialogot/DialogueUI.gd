@@ -1,6 +1,8 @@
 extends BaseDialogueBox
 
-@onready var voicebox: ACVoiceBox = $ACVoiceBox
+@export var default_voice: VoiceProfile
+
+@onready var voicebox: Dialogot = $Dialogot
 @onready var text_label: RichTextLabel = $Box/MarginContainer/VBox/TextLabel
 @onready var name_label: Label = $Box/MarginContainer/VBox/Header/NameLabel
 @onready var portrait: TextureRect = $Box/MarginContainer/VBox/Header/Portrait
@@ -27,10 +29,11 @@ func show_line(line: DialogueLine) -> void:
 	if line.speaker:
 		name_label.text = line.speaker.display_name
 		portrait.texture = line.speaker.portrait
-		voicebox.voice = line.speaker.voice
+		voicebox.voice = line.speaker.voice if line.speaker.voice else default_voice
 	else:
 		name_label.text = ""
 		portrait.texture = null
+		voicebox.voice = default_voice
 
 	# Strip BBCode tags before voicing so phoneme timing matches visible characters.
 	var voiced_text: String = _bbcode_strip_regex.sub(line.text, "", true)
@@ -43,13 +46,17 @@ func _on_characters_sounded(characters: String) -> void:
 func _on_finished_phrase() -> void:
 	text_label.visible_characters = -1
 	DialogueManager.finish_line()
-	var line := DialogueManager.current_line()
+	var line: DialogueLine = DialogueManager.current_line()
 	if line and line.auto_advance:
 		await get_tree().create_timer(line.auto_advance_delay).timeout
 		DialogueManager.advance()
 
 func _input(event: InputEvent) -> void:
 	if not DialogueManager.is_playing():
+		return
+	if event.is_action_pressed("ui_cancel"):
+		voicebox.stop()
+		DialogueManager.skip()
 		return
 	if not event.is_action_pressed("ui_accept"):
 		return

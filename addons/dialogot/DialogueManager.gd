@@ -36,5 +36,11 @@ func current_line() -> DialogueLine:
 		return null
 	return _script.lines[_current_index]
 
+func skip() -> void:
+	if not _is_playing:
+		return
+	_is_playing = false
+	emit_signal("dialogue_finished")
+
 func is_playing() -> bool:
 	return _is_playing

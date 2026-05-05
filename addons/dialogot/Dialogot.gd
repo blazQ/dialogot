@@ -1,5 +1,5 @@
 extends AudioStreamPlayer
-class_name ACVoiceBox
+class_name Dialogot
 
 signal characters_sounded(characters)
 signal finished_phrase()
@@ -20,19 +20,19 @@ func _ready():
 
 func _setup_bus():
 	if voice == null:
-		push_error("ACVoiceBox: no VoiceProfile assigned")
+		push_error("Dialogot: no VoiceProfile assigned")
 		return
 	bus = voice.audio_bus
 	var bus_idx := AudioServer.get_bus_index(voice.audio_bus)
 	if bus_idx == -1:
-		push_error("ACVoiceBox: bus '%s' not found." % voice.audio_bus)
+		push_error("Dialogot: bus '%s' not found." % voice.audio_bus)
 		return
 	for i in AudioServer.get_bus_effect_count(bus_idx):
 		if AudioServer.get_bus_effect(bus_idx, i) is AudioEffectPitchShift:
 			_pitch_effect = AudioServer.get_bus_effect(bus_idx, i)
 			break
 	if _pitch_effect == null:
-		push_error("ACVoiceBox: no PitchShift effect on bus '%s'." % voice.audio_bus)
+		push_error("Dialogot: no PitchShift effect on bus '%s'." % voice.audio_bus)
 
 func play_string(in_string: String):
 	_setup_bus()

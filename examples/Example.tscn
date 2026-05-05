@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dawyf5cxb5n1g"]
 
 [ext_resource type="PackedScene" uid="uid://c0672p5njmhar" path="res://addons/dialogot/DialogueUI.tscn" id="1_7f3si"]
-[ext_resource type="Script" uid="uid://b6071lbm5tpe0" path="res://examples/Example.gd" id="2_u3r3m"]
+[ext_resource type="Script" path="res://examples/Example.gd" id="2_u3r3m"]
 
 [node name="Example" type="Node" unique_id=416975459]
 
 [node name="DialogueUI" parent="." unique_id=1777684213 instance=ExtResource("1_7f3si")]
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Example Triggerer" type="Node" parent="." unique_id=1115116997]
 script = ExtResource("2_u3r3m")

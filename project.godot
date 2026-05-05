@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="ACVoicebox"
+config/name="Dialogot"
 run/main_scene="uid://dawyf5cxb5n1g"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
@@ -25,11 +25,18 @@ buses/default_bus_layout="uid://b1neb7txsxoor"
 
 [autoload]
 
-DialogueManager="*uid://udi1m6dvoc81"
+DialogueManager="*res://addons/dialogot/DialogueManager.gd"
 
 [dotnet]
 
-project/assembly_name="ACVoicebox"
+project/assembly_name="Dialogot"
+
+[input]
+
+ui_can={
+"deadzone": 0.2,
+"events": []
+}
 
 [rendering]
 
