@@ -4,9 +4,9 @@
 [![Godot v4.6](https://img.shields.io/badge/Godot-v4.6-blue?logo=godot-engine)](https://godotengine.org/)
 [![License: MIT](https://img.shields.io/github/license/blazQ/dialogot)](LICENSE)
 
-An Animal Crossing–style phoneme voicebox and dialogue system for Godot 4. Each character speaks in a distinct synthesised voice by playing phoneme sounds per letter, driven by a simple plain-text `.dialogue` script format.
+Minimal dialogue system featuring Animal Crossing style animalese voicesfor Godot 4. Each character speaks in a distinct synthesised voice by playing phoneme sounds per letter, driven by a simple plain-text `.dialogue` script format.
 
-Inspired by [Equalo's animalese-generator](https://github.com/equalo-official/animalese-generator). Letter sounds taken from the same repo.
+Inspired by [Equalo's animalese-generator](https://github.com/equalo-official/animalese-generator) and used [MattMarch's ACVoicebox](https://github.com/mattmarch/ACVoicebox) as the base reference. Letter sounds taken from the same repo.
 
 ---
 
@@ -163,4 +163,4 @@ Use your scene instead of `DialogueUI.tscn`. `BaseDialogueBox` already handles `
 ## Credits
 
 - Original concept and phoneme sounds: [Equalo](https://github.com/equalo-official/animalese-generator)
-- Godot 4 port: [Alex](https://github.com/alexQueue)
+- Godot 4 port: [Alex](https://github.com/mattmarch/ACVoicebox)
