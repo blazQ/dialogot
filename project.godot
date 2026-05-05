@@ -8,12 +8,24 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="ACVoicebox"
-run/main_scene="res://Example.tscn"
-config/features=PackedStringArray("4.1")
+run/main_scene="uid://dawyf5cxb5n1g"
+config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
+
+[audio]
+
+buses/default_bus_layout="uid://b1neb7txsxoor"
+
+[autoload]
+
+DialogueManager="*uid://udi1m6dvoc81"
 
 [dotnet]
 

@@ -1,0 +1,18 @@
+# Example dialogue script.
+# Format:
+#   [CHARACTER_NAME]          — switch speaker
+#   [CHARACTER_NAME auto_advance=true delay=1.5]  — with options
+#   Text supports [wave]BBCode[/wave] effects and [b]bold[/b] etc.
+#   Blank lines between paragraphs are ignored.
+
+[GIOVANNI]
+Ciao, io sono un [wave]pazzo criminale[/wave].
+
+[LUCIFERO auto_advance=true delay=2.0]
+Non sono Giovanni. Io sono [shake]Lucifero[/shake].
+
+[GIOVANNI]
+Mannaggia, non lo sapevo. Mi maledici?
+
+[NARRATORE auto_advance=true delay=1.5]
+Ecco che arriva [rainbow]Crimson Mentone[/rainbow].

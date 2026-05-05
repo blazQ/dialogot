@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="VoiceProfile" format=3 uid="uid://b58bnr8pcwhdd"]
+
+[ext_resource type="Script" uid="uid://lwty34a4opai" path="res://VoiceProfile.gd" id="1_k6b1n"]
+
+[resource]
+script = ExtResource("1_k6b1n")
+inflection_shift = 0.4
+speed = 2.5
+word_gap = 0.04
+sentence_gap = 0.09
+metadata/_custom_type_script = "uid://lwty34a4opai"

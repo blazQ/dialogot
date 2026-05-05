@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="VoiceProfile" format=3 uid="uid://u7a4qdqrbgwl"]
+
+[ext_resource type="Script" uid="uid://lwty34a4opai" path="res://VoiceProfile.gd" id="1_ufl16"]
+
+[resource]
+script = ExtResource("1_ufl16")
+base_pitch = 0.5
+metadata/_custom_type_script = "uid://lwty34a4opai"

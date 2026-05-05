@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://c0672p5njmhar"]
+
+[ext_resource type="Script" uid="uid://bixbr40638igw" path="res://addons/dialogot/DialogueUI.gd" id="1_ui"]
+[ext_resource type="Script" uid="uid://kpq3htunh4qy" path="res://addons/dialogot/Dialogot.gd" id="2_ui"]
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_ui")
+
+[node name="Dialogot" type="AudioStreamPlayer" parent="."]
+bus = &"Voice"
+script = ExtResource("2_ui")
+metadata/_custom_type_script = "uid://kpq3htunh4qy"
+
+[node name="Box" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -160.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Box"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Box/MarginContainer"]
+layout_mode = 2
+
+[node name="Header" type="HBoxContainer" parent="Box/MarginContainer/VBox"]
+layout_mode = 2
+
+[node name="Portrait" type="TextureRect" parent="Box/MarginContainer/VBox/Header"]
+layout_mode = 2
+custom_minimum_size = Vector2(64, 64)
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="Box/MarginContainer/VBox/Header"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextLabel" type="RichTextLabel" parent="Box/MarginContainer/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0, 80)
+bbcode_enabled = true
